@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+export default function LandingPage() {
+  return (
+    <div dangerouslySetInnerHTML={{
+      __html: `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -183,10 +186,13 @@
       e.preventDefault();
       const emailInput = e.target.email;
       if (emailInput.value.trim()) {
-        alert(\`Thank you for joining the waitlist, ${emailInput.value.trim()}! We will keep you updated.\`);
+        alert(\`Thank you for joining the waitlist, \${emailInput.value.trim()}! We will keep you updated.\`);
         emailInput.value = '';
       }
     });
   </script>
 </body>
-</html>
+</html>`
+    }} />
+  )
+}
